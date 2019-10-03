@@ -1,6 +1,7 @@
 package org.liquibase
 
 import liquibase.change.core.CreateTableChange
+import org.liquibase.column.ColumnDsl
 import java.time.LocalDate
 
 @LiquibaseDslMarker
