@@ -19,12 +19,14 @@ class ColumnDsl<T>(name: String) {
 }
 
 var ColumnDsl<*>.description: String
+    @Deprecated(message = "Not supported", level = DeprecationLevel.HIDDEN)
     get() = TODO()
     set(value) {
         definition.remarks = value
     }
 
 var ColumnDsl<String>.length: Int
+    @Deprecated(message = "Not supported", level = DeprecationLevel.HIDDEN)
     get() = TODO()
     set(value) {
         definition.name = "${definition.name}($value)"

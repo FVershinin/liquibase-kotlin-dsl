@@ -58,6 +58,9 @@ fun main() {
                 }
             }
         }
+        changeSet("a", "b") {
+            createView("ev") { replaceIfExists(); sql = """select * from event""" }
+        }
     }
     val database = H2Database().apply {
         connection = JdbcConnection(DriverManager.getConnection("jdbc:h2:mem:"))

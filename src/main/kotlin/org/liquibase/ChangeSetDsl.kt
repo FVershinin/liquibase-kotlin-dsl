@@ -1,5 +1,6 @@
 package org.liquibase
 
+import liquibase.change.core.CreateViewChange
 import liquibase.changelog.ChangeSet
 import liquibase.changelog.DatabaseChangeLog
 
@@ -7,7 +8,6 @@ import liquibase.changelog.DatabaseChangeLog
 class ChangeSetDsl(id: String, author: String, changeLog: DatabaseChangeLog) {
 
     internal val changeSet = ChangeSet(id, author, false, false, "", "", "", changeLog)
-
 
     fun createIndex(name: String, block: () -> Unit) {
         changeSet.changeLog
@@ -26,7 +26,7 @@ class ChangeSetDsl(id: String, author: String, changeLog: DatabaseChangeLog) {
         TODO()
     }
 
-    fun createView(name: String, block: () -> Unit) {
-        TODO()
+    fun createView(name: String, block: CreateViewDsl.() -> Unit) {
+        changeSet.addChange(CreateViewDsl(name).apply(block).definition)
     }
 }
