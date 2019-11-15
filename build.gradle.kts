@@ -14,7 +14,7 @@ repositories {
 dependencies {
     implementation("org.liquibase:liquibase-core:3.8.1")
     implementation(kotlin("stdlib-jdk8"))
-    runtime("com.h2database:h2:1.4.200")
+    runtimeOnly("com.h2database:h2:1.4.200")
 }
 
 tasks.withType<KotlinCompile> {

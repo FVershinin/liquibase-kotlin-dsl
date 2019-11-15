@@ -12,7 +12,7 @@ fun main() {
         changeSet("0", "firstname.lastname") {
             createTable(name = "user") {
                 "id" bigint {
-                    description = "Hello, World!";
+                    description = "some description";
                     primaryKey(validated = true);
                     autoIncrement(startWith = 32, incrementBy = 10)
                 }
@@ -22,7 +22,7 @@ fun main() {
                     unique()
                 }
                 "password" varchar {
-                    description = "Hello, World"
+                    description = "some description 2"
                     length = 50
                 }
                 "firstname" varchar { length = 50; description = "qwe"; unique() }
